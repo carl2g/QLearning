@@ -5,14 +5,8 @@ import random
 env = gym.make("Pendulum-v0")
 
 def get_discret_state(state):
-	# print(state, env.observation_space.low, STATE_VAL_STEP)
 	discrete_state = (state - env.observation_space.low) / STATE_VAL_STEP	
 	return tuple(discrete_state.astype(np.int))
-
-# def get_discret_action(action):
-# 	discrete_action = (action - MIN_ACTION_VAL) / ACTION_STEP
-# 	return tuple(action.astype(np.int))
-
 
 MAX_ACTION_VAL = env.action_space.high[0]
 MIN_ACTION_VAL = env.action_space.low[0]
